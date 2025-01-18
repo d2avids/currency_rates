@@ -1,0 +1,10 @@
+.env
+.venv
+.gitignore
+README.md
+.env_example
+logs
+htmlcov/
+.coverage
+coverage.svg
+.coveragerc

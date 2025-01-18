@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "currency-rates-api"
+version = "0.1.0"
+description = ""
+authors = ["David Saidov <saidov2.david@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+fastapi = "^0.115.6"
+orjson = "^3.10.14"
+sqlalchemy = "^2.0.37"
+asyncpg = "^0.30.0"
+psycopg = "^3.2.3"
+uvicorn = "^0.34.0"
+sqlalchemy-utils = "^0.41.2"
+pydantic-settings = "^2.7.1"
+aiohttp = "^3.11.11"
+alembic = "^1.14.1"
+
+
+[tool.poetry.group.dev.dependencies]
+isort = "^6.0.0"
+pytest-cov = "^6.0.0"
+pytest = "^8.3.4"
+httpx = "^0.28.1"
+pytest-asyncio = "^0.25.3"
+coverage-badge = "^1.1.2"
+aiosqlite = "^0.21.0"
+testcontainers = "^4.9.1"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
