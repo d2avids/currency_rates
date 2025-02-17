@@ -7,7 +7,7 @@ from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.db import get_db_session
+from core.db import get_db_session
 from domain.currency_rates import CurrencyRate
 from schemas.currency_rates import CurrencyRateRequest, CurrencyRateResponse
 
