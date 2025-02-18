@@ -2,6 +2,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-009485.svg?logo=fastapi&logoColor=white)](https://pypi.org/project/fastapi/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff)](https://www.docker.com/)
 [![Postgres](https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+![coverage](./coverage.svg)
 ![tests](https://github.com/d2avids/currency_rates/actions/workflows/tests.yml/badge.svg)
 ![tests](https://github.com/d2avids/currency_rates/actions/workflows/deploy.yml/badge.svg)
-![coverage](./coverage.svg)
+

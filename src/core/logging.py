@@ -1,7 +1,9 @@
 import os
 
+LOGS_FOLDER = './logs'
+
 os.makedirs(
-    '../logs',
+    LOGS_FOLDER,
     exist_ok=True
 )
 
@@ -30,7 +32,7 @@ LOGGING_CONFIG = {
             "class": "logging.handlers.TimedRotatingFileHandler",
             "formatter": "detailed",
             "level": "INFO",
-            "filename": "../logs/app.log",
+            "filename": f"{LOGS_FOLDER}/app.log",
             "when": "midnight",
             "backupCount": 30,
             "encoding": "utf8",

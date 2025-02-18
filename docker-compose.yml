@@ -31,5 +31,5 @@ services:
     ports:
       - "${BACKEND_PORT}:8080"
     volumes:
-      - ./auth-logs:/app/logs
+      - ./logs:/app/logs
     logging: *logging
