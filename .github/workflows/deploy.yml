@@ -30,5 +30,5 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd ${{ secrets.PROJECT_FOLDER }}
-            sudo docker compose up --build --force-recreate
-            sudo docker compose exec backend alembic upgrade head
+            sudo docker compose up --build --force-recreate -d
+            sudo docker compose exec backend poetry run alembic upgrade head

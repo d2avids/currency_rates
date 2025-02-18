@@ -18,7 +18,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "127.0.0.1:5450:5432"
+      - "127.0.0.1:${POSTGRES_PORT}:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
     logging: *logging
@@ -29,7 +29,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "${BACKEND_PORT}:8080"
+      - "127.0.0.1:${BACKEND_PORT}:8080"
     volumes:
       - ./logs:/app/logs
     logging: *logging
