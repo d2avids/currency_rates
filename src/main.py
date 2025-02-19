@@ -4,7 +4,6 @@ from fastapi import FastAPI, Security, Depends
 from fastapi.responses import ORJSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
-from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 
 from api.v1.currency_rates import router as currency_rates_router
 from core.settings import settings
@@ -25,9 +24,6 @@ app = FastAPI(
     ],
 )
 app.include_router(currency_rates_router)
-
-if not settings.DEBUG:
-    app.add_middleware(HTTPSRedirectMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
