@@ -54,6 +54,7 @@ curl -X 'POST' \
 - **Pydantic** - a data validation and settings management library that ensures type safety in FastAPI applications.
 - **Uvicorn** - a fast ASGI server for running FastAPI applications in production.
 - **Pytest** - a testing package, used alongside **testcontainers** for containerized database testing.
+- **CI/CD** - Continuous Integration and Continuous Delivery via **Github Actions** workflow 
 ---
 ## Installation
 ### 1. Install poetry dependencies:
