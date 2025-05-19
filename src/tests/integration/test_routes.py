@@ -161,8 +161,8 @@ def test_get_rate_correct(monkeypatch, test_client: TestClient):
     status_code = response.status_code
     response_json = response.json()
     assert status_code == 200
-    assert response_json['from_cur'] == from_cur
-    assert response_json['to_cur'] == to_cur
+    assert response_json['fromCur'] == from_cur
+    assert response_json['toCur'] == to_cur
 
 
 async def fake_fetch_rate(session, req):
@@ -221,12 +221,12 @@ def test_get_rates_multiple(monkeypatch, test_client: TestClient):
     assert len(data) == 2
 
     first_response = data[0]
-    assert first_response['from_cur'] == 'EUR'
-    assert first_response['to_cur'] == 'USD'
+    assert first_response['fromCur'] == 'EUR'
+    assert first_response['toCur'] == 'USD'
 
     second_response = data[1]
-    assert second_response['from_cur'] == 'AAA'
-    assert second_response['to_cur'] == 'BBB'
+    assert second_response['fromCur'] == 'AAA'
+    assert second_response['toCur'] == 'BBB'
 
 
 def test_get_rates_exceeds_max(test_client: TestClient):
