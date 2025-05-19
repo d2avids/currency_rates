@@ -37,8 +37,8 @@ curl -X 'POST' \
 ### Response example:
 ```shell
 {
-  "from_cur": "USD",
-  "to_cur": "EUR",
+  "fromCur": "USD",
+  "toCur": "EUR",
   "date": "2019-02-01",
   "rate": "0.87161482"
 }
