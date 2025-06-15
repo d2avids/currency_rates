@@ -23,7 +23,7 @@ app = FastAPI(
         Depends(rate_limiter_dependency),
     ],
 )
-app.include_router(currency_rates_router)
+app.include_router(currency_rates_router, prefix="/api")
 
 app.add_middleware(
     CORSMiddleware,
