@@ -34,7 +34,7 @@ def test_get_rate_incorrect_date_format(test_client: TestClient):
         'date': '2023/21/21'
     }
     response = test_client.post(
-        url=f'{router.prefix}/get-rate',
+        url=f'api{router.prefix}/get-rate',
         json=body,
         headers=HEADERS
     )
@@ -50,7 +50,7 @@ def test_get_rate_date_in_future(test_client: TestClient):
         'date': '2999-01-01'
     }
     response = test_client.post(
-        url=f'{router.prefix}/get-rate',
+        url=f'api{router.prefix}/get-rate',
         json=body,
         headers=HEADERS
     )
@@ -68,7 +68,7 @@ def test_get_rate_incorrect_currencies(monkeypatch, test_client: TestClient):
         'date': '2020-01-01'
     }
     response = test_client.post(
-        url=f'{router.prefix}/get-rate',
+        url=f'api{router.prefix}/get-rate',
         json=body,
         headers=HEADERS
     )
@@ -83,7 +83,7 @@ def test_get_rate_unauthorized(test_client: TestClient):
         'date': '2015-01-01'
     }
     response = test_client.post(
-        url=f'{router.prefix}/get-rate',
+        url=f'api{router.prefix}/get-rate',
         json=body,
         headers=UNAUTHORIZED_HEADERS
     )
@@ -99,7 +99,7 @@ def test_get_rate_invalid_api_key(test_client: TestClient):
         'date': '2015-01-01'
     }
     response = test_client.post(
-        url=f'{router.prefix}/get-rate',
+        url=f'api{router.prefix}/get-rate',
         json=body,
         headers=INVALID_API_KEY_HEADERS
     )
@@ -127,7 +127,7 @@ def test_get_rate_limited_api_key(monkeypatch, test_client: TestClient):
     }
     for _ in range(settings.security.RATE_LIMIT+1):
         response = test_client.post(
-            url=f'{router.prefix}/get-rate',
+            url=f'api{router.prefix}/get-rate',
             json=body,
             headers=LIMITED_API_KEY_HEADERS
         )
@@ -154,7 +154,7 @@ def test_get_rate_correct(monkeypatch, test_client: TestClient):
         'date': date
     }
     response = test_client.post(
-        url=f'{router.prefix}/get-rate',
+        url=f'api{router.prefix}/get-rate',
         json=body,
         headers=HEADERS
     )
@@ -209,7 +209,7 @@ def test_get_rates_multiple(monkeypatch, test_client: TestClient):
     payload = [valid_request, invalid_request]
 
     response = test_client.post(
-        url=f'{router.prefix}/get-rates',
+        url=f'api{router.prefix}/get-rates',
         json=payload,
         headers=HEADERS
     )
@@ -238,7 +238,7 @@ def test_get_rates_exceeds_max(test_client: TestClient):
     ]
 
     response = test_client.post(
-        url=f'{router.prefix}/get-rates',
+        url=f'api{router.prefix}/get-rates',
         json=payload,
         headers=HEADERS
     )
